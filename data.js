@@ -1558,3 +1558,8 @@ const tochigiData = {
 
   ]
 };
+
+{
+  name: "日光市",
+  image: "images/nikko.png"
+}

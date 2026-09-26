@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>栃木县探索｜栃木县日中友好协会</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-mark">中日</div>
+      <div class="brand-text">
+        <strong>栃木县日中友好协会</strong>
+        <span>TOCHIGI × CHINA</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div class="hero-copy">
+        <p class="eyebrow">TOCHIGI × CHINA</p>
+
+        <h1>栃木县探索</h1>
+
+        <p class="hero-lead">
+          从日本栃木，认识栃木。
+        </p>
+
+        <p class="hero-note">
+          探索栃木县14座城市，通过一个个问题，发现这片土地的历史、文化、美食与风景。
+        </p>
+      </div>
+
+      <div class="hero-status">
+
+        <div class="status-item">
+          <span class="status-label">LEVEL</span>
+          <strong id="levelValue">1</strong>
+        </div>
+
+        <div class="status-item">
+          <span class="status-label">EXP</span>
+          <strong id="expValue">0</strong>
+        </div>
+
+        <div class="status-item">
+          <span class="status-label">已探索城市</span>
+          <strong id="visitedValue">0 / 14</strong>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MASTER -->
+  <section class="master-section" id="masterSection">
+
+    <div class="master-card">
+
+      <div class="master-copy">
+        <p class="section-eyebrow">MASTER QUEST</p>
+
+        <h2>栃木县综合挑战</h2>
+
+        <p>
+          恭喜你探索完栃木县的14座城市！
+          现在，从所有城市的问题中随机抽取题目，
+          挑战栃木县综合知识。
+        </p>
+      </div>
+
+      <button id="masterButton" class="primary-button">
+        开始综合挑战
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- CITY LIST -->
+  <section class="cities-section">
+
+    <div class="section-heading">
+
+      <div>
+        <p class="section-eyebrow">EXPLORE TOCHIGI</p>
+        <h2>栃木县14座城市</h2>
+      </div>
+
+      <div class="completion">
+        <span>探索完成度</span>
+        <strong id="completionValue">0%</strong>
+      </div>
+
+    </div>
+
+    <div id="cityList" class="city-grid"></div>
+
+  </section>
+
+
+  <!-- DIFFICULTY -->
+  <section id="difficultyScreen" class="screen hidden">
+
+    <button id="backToCitiesFromDifficulty" class="back-button">
+      ← 返回城市列表
+    </button>
+
+    <div class="difficulty-inner">
+
+      <p class="section-eyebrow">SELECT DIFFICULTY</p>
+
+      <h2>选择难度</h2>
+
+      <p class="difficulty-description">
+        你想用什么方式探索这座城市？
+      </p>
+
+
+      <div class="difficulty-grid">
+
+        <button id="easyButton" class="difficulty-card">
+
+          <span class="difficulty-number">01</span>
+
+          <div class="difficulty-content">
+            <span class="difficulty-label">初级</span>
+            <strong>5题</strong>
+            <p>轻松挑战</p>
+          </div>
+
+        </button>
+
+
+        <button id="hardButton" class="difficulty-card">
+
+          <span class="difficulty-number">02</span>
+
+          <div class="difficulty-content">
+            <span class="difficulty-label">高级</span>
+            <strong>15题</strong>
+            <p>深入了解</p>
+          </div>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUIZ -->
+  <section id="quizScreen" class="screen hidden">
+
+    <button id="backToCitiesFromQuiz" class="back-button">
+      ← 返回城市列表
+    </button>
+
+
+    <div class="quiz-header">
+
+      <div>
+        <p id="quizCityName" class="section-eyebrow"></p>
+        <h2 id="quizTitle"></h2>
+      </div>
+
+      <div class="quiz-progress">
+        <span id="questionCounter">第1题 / 5</span>
+      </div>
+
+    </div>
+
+
+    <div class="quiz-card">
+
+      <div class="question-number">
+        QUESTION <span id="questionNumber">01</span>
+      </div>
+
+      <h3 id="questionText">
+        问题加载中……
+      </h3>
+
+
+      <div id="choicesContainer" class="choices"></div>
+
+
+      <div id="feedback" class="feedback hidden">
+
+        <div id="feedbackTitle" class="feedback-title"></div>
+
+        <p id="feedbackText"></p>
+
+      </div>
+
+
+      <button id="nextButton" class="primary-button next-button" disabled>
+        下一题
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- RESULT -->
+  <section id="resultScreen" class="screen hidden">
+
+    <div class="result-card">
+
+      <div class="result-seal">
+        栃木
+      </div>
+
+      <p class="section-eyebrow">QUEST COMPLETE</p>
+
+      <h2 id="resultTitle">
+        探索完成！
+      </h2>
+
+      <p id="resultMessage"></p>
+
+
+      <div class="result-stats">
+
+        <div class="result-stat">
+          <span>正确率</span>
+          <strong id="resultScore">0 / 5</strong>
+        </div>
+
+        <div class="result-stat">
+          <span>获得经验</span>
+          <strong id="resultExp">+0 EXP</strong>
+        </div>
+
+        <div class="result-stat">
+          <span>奖励</span>
+          <strong id="resultBonus">—</strong>
+        </div>
+
+      </div>
+
+
+      <button id="returnCitiesButton" class="primary-button">
+        返回城市列表
+      </button>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+  <p>栃木县日中友好协会 × 栃木县探索</p>
+
+  <button id="resetButton" class="reset-button">
+    重置游戏数据
+  </button>
+</footer>
+
+
+<script src="data.js"></script>
+<script src="game.js"></script>
+
+</body>
+</html>
